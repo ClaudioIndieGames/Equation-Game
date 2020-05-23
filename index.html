@@ -29,15 +29,17 @@
   </head>
   <body>	
      <div id="unityContainer"></div>	
-  </body>
-  <body onresize="ResizeWindow()">
      <script>
 	function ResizeWindow() {
-  		var vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  		var vw = Math.max(window.outerWidth, window.outerHeight);
 		var vhmax = window.screen.availHeight - (window.outerHeight - window.innerHeight);
 		var vwmax = window.screen.availWidth - (window.outerWidth - window.innerWidth);
-  		document.getElementById("unityContainer").style.height = (vw * (vhmax/vwmax)) + "px";
+		var ratio = Math.min((vhmax/vwmax), (vwmax/vhmax));
+  		document.getElementById("unityContainer").style.height = (vw * ratio) + "px";
 		}
      </script> 
+  </body>
+  <body onresize="ResizeWindow()">
+	<script>ResizeWindow();</script>
   </body>
 </html>
