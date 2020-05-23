@@ -12,7 +12,5 @@
 "cacheControl": {"default": "must-revalidate"},
 "developmentBuild": false,
 "multithreading": false,
-"display":      "fullscreen",
-"orientation":  "landscape",
 "unityVersion": "2019.3.12f1"
 }
