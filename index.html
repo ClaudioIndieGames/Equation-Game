@@ -33,7 +33,8 @@
 	function ResizeWindow() {
 		var height = document.documentElement.clientHeight;
 		var width = document.body.offsetWidth;
-  		var vw = Math.max(width, height);
+  		//var vw = Math.max(width, height);
+		var vw = width;
 		var vhmax = screen.availHeight - (window.outerHeight - window.innerHeight);
 		var vwmax = screen.availWidth - (window.outerWidth - window.innerWidth);
 		var ratio = Math.min((vhmax/vwmax), (vwmax/vhmax));
