@@ -33,7 +33,7 @@
   <body onresize="ResizeWindow()">
      <script>
 	function ResizeWindow() {
-  		var vw = window.outerWidth;
+  		var vw = window.innerWidth;
 		var vhmax = window.screen.availHeight - (window.outerHeight - window.innerHeight);
 		var vwmax = window.screen.availWidth - (window.outerWidth - window.innerWidth);
   		document.getElementById("unityContainer").style.height = (vw * (vhmax/vwmax)) + "px";
