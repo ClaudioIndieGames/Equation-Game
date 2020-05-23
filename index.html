@@ -31,7 +31,7 @@
      <div id="unityContainer"></div>	
      <script>
 	function ResizeWindow() {
-  		var vw = Math.max(window.outerWidth, window.outerHeight);
+  		var vw = Math.max(window.innerWidth, window.innerHeight);
 		var vhmax = screen.availHeight - (window.outerHeight - window.innerHeight);
 		var vwmax = screen.availWidth - (window.outerWidth - window.innerWidth);
 		var ratio = Math.min((vhmax/vwmax), (vwmax/vhmax));
