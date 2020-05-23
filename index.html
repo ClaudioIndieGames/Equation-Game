@@ -31,16 +31,14 @@
      <div id="unityContainer"></div>	
      <script>
 	function ResizeWindow() {
-		var height = document.body.getBoundingClientRect().height;
-		var width = document.body.getBoundingClientRect().width;
-  		var vw = Math.max(document.body.style.width, document.body.style.height);
+		var height = document.documentElement.clientHeight;
+		var width = document.body.offsetWidth;
+  		var vw = Math.max(width, height);
 		var vhmax = screen.availHeight - (window.outerHeight - window.innerHeight);
 		var vwmax = screen.availWidth - (window.outerWidth - window.innerWidth);
 		var ratio = Math.min((vhmax/vwmax), (vwmax/vhmax));
-  		//document.getElementById("unityContainer").style.height = (vw * ratio) + "px";
-		//document.getElementById("unityContainer").style.width = vw + "px";
-		document.getElementById("unityContainer").style.height = height;
-		document.getElementById("unityContainer").style.width = width;
+  		document.getElementById("unityContainer").style.height = (vw * ratio) + "px";
+		document.getElementById("unityContainer").style.width = vw + "px";
 		}
      </script> 
   </body>
