@@ -32,8 +32,8 @@
      <script>
 	function ResizeWindow() {
   		var vw = Math.max(window.outerWidth, window.outerHeight);
-		var vhmax = window.screen.availHeight - (window.outerHeight - window.innerHeight);
-		var vwmax = window.screen.availWidth - (window.outerWidth - window.innerWidth);
+		var vhmax = screen.availHeight - (window.outerHeight - window.innerHeight);
+		var vwmax = screen.availWidth - (window.outerWidth - window.innerWidth);
 		var ratio = Math.min((vhmax/vwmax), (vwmax/vhmax));
   		document.getElementById("unityContainer").style.height = (vw * ratio) + "px";
 		document.getElementById("unityContainer").style.width = Math.max(window.innerWidth, window.innerHeight); + "px";
