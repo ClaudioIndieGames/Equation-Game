@@ -10,6 +10,8 @@
     const initialDimensions = {width: parseInt(gameContainer.style.width, 10), height: parseInt(gameContainer.style.height, 10)};
     gameContainer.style.width = '100%';
     gameContainer.style.height = '100%';
+    
+    screen.orientation.lock('landscape');
 
     let gCanvasElement = null;
 
