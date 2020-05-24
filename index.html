@@ -7,7 +7,7 @@
   		height: 100%;
   		margin: 0;
         	background-color: black;
-		border:1px solid red;
+		border:1px solid white;
 		box-sizing: border-box;
 		}
 	  #unityContainer {
@@ -35,8 +35,8 @@
 		var width = document.body.offsetWidth;
 		var vhmax = screen.availHeight - (window.outerHeight - window.innerHeight);
 		var vwmax = screen.availWidth - (window.outerWidth - window.innerWidth);
-		var ratio = Math.min((vhmax/vwmax), (vwmax/vhmax));
-		//var ratio = Math.min((height/width), (vwmax/vhmax));
+		//var ratio = Math.min((vhmax/vwmax), (vwmax/vhmax));
+		var ratio = Math.min((height/vwmax), (vwmax/vhmax));
   		document.getElementById("unityContainer").style.height = (width * ratio) + "px";
 		document.getElementById("unityContainer").style.width = width + "px";
 		}
