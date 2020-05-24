@@ -6,8 +6,9 @@
   		width:  100%;
   		height: 100%;
   		margin: 0;
+		border: 0;
         	background-color: black;
-		border:1px solid white;
+		//border:1px solid red;
 		box-sizing: border-box;
 		}
 	  #unityContainer {
@@ -31,12 +32,22 @@
      <div id="unityContainer"></div>	
      <script>
 	function ResizeWindow() {
-		var height = document.body.offsetHeight;
-		var width = document.body.offsetWidth;
+		var body = document.body,
+    		html = document.documentElement;
+		var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+		var width = Math.max(body.scrollWidth, body.offsetWidth, html.clientWidth, html.scrollWidth, html.offsetWidth);
 		var vhmax = screen.availHeight - (window.outerHeight - window.innerHeight);
 		var vwmax = screen.availWidth - (window.outerWidth - window.innerWidth);
-		//var ratio = Math.min((vhmax/vwmax), (vwmax/vhmax));
-		var ratio = Math.min((height/vwmax), (vwmax/vhmax));
+		var ratio;
+		if((height/width) <= 0.75)
+		{
+		    ratio = height / width;
+		}
+		else
+		{
+		    ratio = Math.min((vhmax/vwmax), (vwmax/vhmax));
+		}
+		//var ratio = Math.min(Math.min((height/width), (vhmax/vwmax)), (vwmax/vhmax));
   		document.getElementById("unityContainer").style.height = (width * ratio) + "px";
 		document.getElementById("unityContainer").style.width = width + "px";
 		}
