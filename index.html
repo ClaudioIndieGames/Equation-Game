@@ -124,14 +124,13 @@
 		// are we full-screen?
 		if (isMobile && (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement)) 
 		{
-        		//console.log("BBBBBBBBBBBBBB");
 			//screen.msLockOrientation.lock("landscape");
 			//screen.mozLockOrientation.lock("landscape");
            		//screen.lockOrientation("landscape");
 			//screen.orientation.lock("landscape");
 			screen.orientation.lock("landscape");
     		} else {
-        		//console.log("AAAAAAAAA");
+        		screen.orientation.unlock();
     		}
 
 
