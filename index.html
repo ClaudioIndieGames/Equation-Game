@@ -116,8 +116,10 @@
      <script>
 	function ResizeWindow() {
 		if (window.fullScreen) {
-           		screen.lockOrientation('landscape');
-			screen.orientation.lock('landscape');
+			screen.msLockOrientation.lock("landscape");
+			screen.mozLockOrientation.lock("landscape");
+           		screen.lockOrientation("landscape");
+			screen.orientation.lock("landscape");
 		}
 
 		var body = document.body,
