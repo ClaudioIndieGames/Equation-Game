@@ -115,6 +115,14 @@
      
      <script>
 	function ResizeWindow() {
+		screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
+
+		if (screen.lockOrientationUniversal(["landscape-primary", "landscape-secondary"])) {
+  			// Orientation was locked
+		} else {
+  			// Orientation lock failed
+		}
+
 		var body = document.body,
     		html = document.documentElement;
 		var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
